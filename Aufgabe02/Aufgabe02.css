@@ -1,0 +1,79 @@
+/*Aufgabe: Aufgabe2
+Name: Dennis Vimon
+Matrikel: 
+Datum: 04.04.2019
+    
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+*/
+
+
+@charset "ISO-8859-1";
+
+
+
+#Ablagestapel{
+	background-color: #ff0000;
+	width:130px;
+	height:230px;
+	border:solid thin black;
+	position: absolute;
+	right:0px;
+	top:0px;
+	
+}
+
+#Nachziehstapel{
+	background-color: #0080ff;
+	width:130px;
+	height:230px;
+	border:solid thin black;
+}
+
+#Handkarten {
+	width: 90%;
+	border-style: solid;
+	border-width: 1px;
+	height: 200px;
+	bottom: 0px;
+	position: absolute;
+}
+.Handkarten {
+	display: inline-block;
+	bottom:0px; 
+	margin: 5px;
+	}
+
+.red{
+	background: #fc1003;
+	width: 130px;
+	height: 170px;
+	border:  dotted black;
+	}
+
+.green{background: #00ff00;
+	width:130px;
+	height:170px;
+	border:dotted black;
+	}
+
+.blue{
+	background: #0801c8;
+	width:130px;
+	height:170px;
+	border:dotted black;
+}
+
+
+	
+.yellow{background: #eff50a;
+	width:130px;
+	height:170px;
+	border:dotted black;
+	}
+
+.black{background: black;
+	width:130px;
+	height:170px;
+	border:dotted black;
+	color:white;
+}
