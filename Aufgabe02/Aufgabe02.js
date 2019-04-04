@@ -7,33 +7,33 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 */
 var MauSpiel;
 (function (MauSpiel) {
-    let sign = ["He", "He2", "He3", "He4", "Ka", "Ka2", "Ka3", "Ka4", "Kr", "Kr2", "Kr3", "Kr4", "Pi", "Pi2", "Pi3", "Pi4"];
-    let values = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "+2", "X", "<=>"];
-    let cards = [{ color: "He", value: "0" }, { color: "Ka", value: "0" }, { color: "Kr", value: "0" }, { color: "Pi", value: "0" }, { color: "black", value: "+4" }, { color: "black", value: "+4" }, { color: "black", value: "+4" }, { color: "black", value: "+4" }, { color: "black", value: "FW" }, { color: "black", value: "FW" }, { color: "black", value: "FW" }, { color: "black", value: "FW" }];
-    for (let i = 0; i < sign.length; i++) {
-        for (let j = 0; j < values.length; j++) {
-            for (let k = 0; k < 2; k++) {
-                let card = { color: sign[i], value: values[j] };
-                cards.push(card);
-            }
-        }
-    }
-    console.log(cards);
-    let handcards = [];
+    document.addEventListener("DomContenLoaded", Eingabe);
+    let sign = ["He7", "He8", "He9", "He1", "HeA", "HeB", "HeK", "HeD", "Ka7", "Ka8", "Ka9", "Ka1", "KaA", "KaB", "KaK", "KaD", "Kr7", "Kr8", "Kr9", "Kr1", "KrA", "KrB", "KrK", "KrD", "Pi7", "Pi8", "Pi9", "Pi1", "PiA", "PiB", "PiK", "PiD"];
+    let handCardsArray;
+    //Zufallszahl 
     function Eingabe() {
         var kartenanzahl = prompt("Kartenanzahl");
         let n = parseInt(kartenanzahl);
         for (let anz = n; anz > 0; anz--) {
-            let r = Math.floor(Math.random() * (cards.length - 1));
-            handcards.push(cards[r]);
-            cards.splice(r, 1);
+            let r = Math.floor(Math.random() * (sign.length - 1));
+            let cardtype = sign[r].substring(0, 2);
+            let cardnumber = sign[r].substring(2);
+            console.log(cardtype);
+            console.log(cardnumber);
+            cardgenerate(cardtype, cardnumber);
         }
-        for (let b = 0; b < handcards.length; b++) {
+        function cardgenerate(_cardtype, _cardnumber) {
             let div = document.createElement("div");
             document.getElementById("Handkarten").appendChild(div);
-            div.innerHTML = handcards[b].value;
+            if (_cardtype == "Pi" || _cardtype == "Kr") {
+                console.log(_cardtype + " if");
+                div.classList.add("schwarz");
+            }
+            else {
+                div.classList.add("rot");
+            }
             div.classList.add("Handkarten");
-            div.classList.add(handcards[b].color);
+            div.innerHTML = "<p>" + _cardnumber + "</p>";
         }
     }
     document.addEventListener("DOMContentLoaded", Eingabe);

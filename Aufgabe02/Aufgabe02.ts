@@ -6,45 +6,42 @@ Datum: 04.04.2019
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 */
 namespace MauSpiel {
-    interface Maucard {
-        color: string;
-        value: string;
-    }
+    document.addEventListener("DomContenLoaded", Eingabe);
 
-    let sign: string[] = ["He", "He2", "He3", "He4", "Ka", "Ka2", "Ka3", "Ka4", "Kr", "Kr2", "Kr3", "Kr4", "Pi", "Pi2", "Pi3", "Pi4"];
-    let values: string[] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "+2", "X", "<=>"];
-    let cards: Maucard[] = [{ color: "He", value: "0" }, { color: "Ka", value: "0" }, { color: "Kr", value: "0" }, { color: "Pi", value: "0" }, { color: "black", value: "+4" }, { color: "black", value: "+4" }, { color: "black", value: "+4" }, { color: "black", value: "+4" }, { color: "black", value: "FW" }, { color: "black", value: "FW" }, { color: "black", value: "FW" }, { color: "black", value: "FW" }];
-
-    for (let i: number = 0; i < sign.length; i++) {
-        for (let j: number = 0; j < values.length; j++) {
-            for (let k: number = 0; k < 2; k++) {
-                let card: Maucard = { color: sign[i], value: values[j] };
-                cards.push(card);
-            }
-        }
-    }
-    console.log(cards);
-
-    let handcards: Maucard[] = [];
+    let sign: string[] = ["He7", "He8", "He9", "He1", "HeA", "HeB", "HeK", "HeD", "Ka7", "Ka8", "Ka9", "Ka1", "KaA", "KaB", "KaK", "KaD", "Kr7", "Kr8", "Kr9", "Kr1", "KrA", "KrB", "KrK", "KrD", "Pi7", "Pi8", "Pi9", "Pi1", "PiA", "PiB", "PiK", "PiD"];
+    let handCardsArray: string[];
+    //Zufallszahl 
 
     function Eingabe(): void {
         var kartenanzahl: string = prompt("Kartenanzahl");
         let n: number = parseInt(kartenanzahl);
 
         for (let anz: number = n; anz > 0; anz--) {
-            let r: number = Math.floor(Math.random() * (cards.length - 1));
-            handcards.push(cards[r]);
-            cards.splice(r, 1);
-        }
+            let r: number = Math.floor(Math.random() * (sign.length - 1));
 
-        for (let b: number = 0; b < handcards.length; b++) {
+            let cardtype: string = sign[r].substring(0, 2);
+            let cardnumber: string = sign[r].substring(2);
+            console.log(cardtype);
+            console.log(cardnumber);
+            cardgenerate(cardtype, cardnumber);
+
+        }
+        function cardgenerate(_cardtype: string, _cardnumber: string): void {
             let div: HTMLElement = document.createElement("div");
             document.getElementById("Handkarten").appendChild(div);
-            div.innerHTML = handcards[b].value;
+            if (_cardtype == "Pi" || _cardtype == "Kr") {
+                console.log(_cardtype + " if");
+                div.classList.add("schwarz");
+
+            } else {
+            div.classList.add("rot"); }
+
             div.classList.add("Handkarten");
-            div.classList.add(handcards[b].color);
+
+            div.innerHTML = "<p>" + _cardnumber + "</p>";
         }
-        
+
+
     }
     document.addEventListener("DOMContentLoaded", Eingabe);
 }

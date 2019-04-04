@@ -38,42 +38,18 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 	position: absolute;
 }
 .Handkarten {
-	display: inline-block;
+    width:50px;
+    height:50px;
 	bottom:0px; 
-	margin: 5px;
-	}
+    margin: 5px;
+    float: left;
+    }
+    
+.rot{background-color:#ff0000;
+    font-size:20px;}
 
-.red{
-	background: #fc1003;
-	width: 130px;
-	height: 170px;
-	border:  dotted black;
-	}
+.schwarz{background-color:black;
+    color:white;
 
-.green{background: #00ff00;
-	width:130px;
-	height:170px;
-	border:dotted black;
-	}
-
-.blue{
-	background: #0801c8;
-	width:130px;
-	height:170px;
-	border:dotted black;
 }
 
-
-	
-.yellow{background: #eff50a;
-	width:130px;
-	height:170px;
-	border:dotted black;
-	}
-
-.black{background: black;
-	width:130px;
-	height:170px;
-	border:dotted black;
-	color:white;
-}
