@@ -38,10 +38,10 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 	position: absolute;
 }
 .Handkarten {
-    width:50px;
-    height:50px;
+    width:120px;
+    height:90px;
 	bottom:0px; 
-    margin: 5px;
+    margin: 10px;
     float: left;
     }
     
