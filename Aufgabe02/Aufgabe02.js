@@ -7,7 +7,7 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 */
 var MauSpiel;
 (function (MauSpiel) {
-    document.addEventListener("DOMContentLoaded", Eingabe);
+    document.addEventListener("DOMContentLoaded", eingabe);
     let sign = ["He7", "He8", "He9", "He1", "HeA", "HeB", "HeK", "HeD", "Ka7", "Ka8", "Ka9", "Ka1", "KaA", "KaB", "KaK", "KaD", "Kr7", "Kr8", "Kr9", "Kr1", "KrA", "KrB", "KrK", "KrD", "Pi7", "Pi8", "Pi9", "Pi1", "PiA", "PiB", "PiK", "PiD"];
     let handCardsArray = [];
     //Zufallszahl 
@@ -16,7 +16,7 @@ var MauSpiel;
         let n = parseInt(kartenanzahl);
         return n;
     }
-    function Eingabe() {
+    function eingabe() {
         let n = kartenanzahlnumber();
         for (let anz = n; anz > 0; anz--) {
             let r = Math.floor(Math.random() * (sign.length - 1));
