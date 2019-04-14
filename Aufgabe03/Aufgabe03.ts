@@ -1,4 +1,4 @@
-/*Aufgabe: Aufgabe2
+/*Aufgabe: Aufgabe3
 Name: Dennis Vimon
 Matrikel: 
 Datum: 04.04.2019
@@ -7,9 +7,13 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 */
 namespace MauSpiel {
     document.addEventListener("DOMContentLoaded", eingabe);
+    document.getElementById("Button").addEventListener("click", kartenSortieren);
+
 
     let sign: string[] = ["He7", "He8", "He9", "He1", "HeA", "HeB", "HeK", "HeD", "Ka7", "Ka8", "Ka9", "Ka1", "KaA", "KaB", "KaK", "KaD", "Kr7", "Kr8", "Kr9", "Kr1", "KrA", "KrB", "KrK", "KrD", "Pi7", "Pi8", "Pi9", "Pi1", "PiA", "PiB", "PiK", "PiD"];
     let handCardsArray: string[] = [];
+
+
 
 
     //Zufallszahl 
@@ -39,7 +43,25 @@ namespace MauSpiel {
 
 
     }
-
+    function kartenSortieren() {
+        Hand.sort(wertSortieren);
+        cardgenerate();
+    }
+    function welcheTaste(event: KeyboardEvent): void {
+        if (event.keyCode == 32) karteZiehen();
+    }
+    function karteZiehen(): void {
+        if (Deck.length > 0) {
+            let n: number = Math.floor(Math.random() * (sign.length)); //Zufallsgenerator
+            sign.push(Deck[n]);
+            sign.splice(n, 1)
+            cardgenerate();
+            console.log(Hand);
+        }
+        else {
+            alert("Es gibt keine Karten mehr zum ziehen !")
+        }
+    }
 
 
 
@@ -89,6 +111,3 @@ namespace MauSpiel {
     }
 
 }
-
-
-
