@@ -1,474 +1,163 @@
-namespace lection3 {
-    /*
-    Aufgabe: <Aufgabe 3>
-    Name: <Dennis Vimon>
-    Matrikel: <>
-    Datum: <14.04.19>
-    	
-    
-    */
-
-    let hk: number;
-
-    function handkartenanzahl(): number {
-        let handkarten: string = prompt("Handkartenanzahl eingeben", "1-6");
-
-        hk = Number(handkarten);
-
-        if (hk > 6 || hk < 1) {
-            alert("Lesen Bitte :) Zwischen 1-6 Handkarten")
-            handkartenanzahl();
-        }
-
-        return hk;
+namespace Aufgabe3 {
+    interface Card {
+        value: string;
+        color: string;
     }
 
-    handkartenanzahl();
+    /*Card Array*/
 
+    let deck: Card[] = [
+        { value: "7", color: "Karo" }, { value: "8", color: "Karo" }, { value: "9", color: "Karo" }, { value: "10", color: "Karo" }, { value: "Bube", color: "Karo" }, { value: "Dame", color: "Karo" }, { value: "Koenig", color: "Karo" }, { value: "As", color: "Karo" },
+        { value: "7", color: "Pik" }, { value: "8", color: "Pik" }, { value: "9", color: "Pik" }, { value: "10", color: "Pik" }, { value: "Bube", color: "Pik" }, { value: "Dame", color: "Pik" }, { value: "Koenig", color: "Pik" }, { value: "As", color: "Pik" },
+        { value: "7", color: "Kreuz" }, { value: "8", color: "Kreuz" }, { value: "9", color: "Kreuz" }, { value: "10", color: "Kreuz" }, { value: "Bube", color: "Kreuz" }, { value: "Dame", color: "Kreuz" }, { value: "Koenig", color: "Kreuz" }, { value: "As", color: "Kreuz" },
+        { value: "7", color: "Herz" }, { value: "8", color: "Herz" }, { value: "9", color: "Herz" }, { value: "10", color: "Herz" }, { value: "Bube", color: "Herz" }, { value: "Dame", color: "Herz" }, { value: "Koenig", color: "Herz" }, { value: "As", color: "Herz" }
+    ];
 
+    let hand: Card[] = [];
 
-    interface Karte {
-        Wert: string;
-        Typ: string;
-        Reihenfolge: number;
-    }
 
-    let karte1: Karte = {
+    document.addEventListener("keydown", checkKey);
 
-        Wert: "7",
-        Typ: "Pik",
-        Reihenfolge: 1
-
-    };
-
-    let karte2: Karte = {
-
-        Wert: "8",
-        Typ: "Pik",
-        Reihenfolge: 2
-
-    };
-
-    let karte3: Karte = {
-
-        Wert: "9",
-        Typ: "Pik",
-        Reihenfolge: 3
-
-    };
-
-    let karte4: Karte = {
-
-        Wert: "10",
-        Typ: "Pik",
-        Reihenfolge: 4
-
-    };
-
-    let karte5: Karte = {
-
-        Wert: "Bube",
-        Typ: "Pik",
-        Reihenfolge: 5
-
-    };
-
-    let karte6: Karte = {
-
-        Wert: "Dame",
-        Typ: "Pik",
-        Reihenfolge: 6
-
-    };
-
-    let karte7: Karte = {
-
-        Wert: "KÃ¶nig",
-        Typ: "Pik",
-        Reihenfolge: 7
-
-    };
-
-    let karte8: Karte = {
-
-        Wert: "Ass",
-        Typ: "Pik",
-        Reihenfolge: 8
-
-    };
-
-    let karte9: Karte = {
-
-        Wert: "7",
-        Typ: "Karo",
-        Reihenfolge: 9
-
-    };
-
-    let karte10: Karte = {
-
-        Wert: "8",
-        Typ: "Karo",
-        Reihenfolge: 10
-
-    };
-
-    let karte11: Karte = {
-
-        Wert: "9",
-        Typ: "Karo",
-        Reihenfolge: 11
-
-    };
-
-    let karte12: Karte = {
-
-        Wert: "10",
-        Typ: "Karo",
-        Reihenfolge: 12
-
-    };
-
-    let karte13: Karte = {
-
-        Wert: "Bube",
-        Typ: "Karo",
-        Reihenfolge: 13
-
-    };
-
-    let karte14: Karte = {
-
-        Wert: "Dame",
-        Typ: "Karo",
-        Reihenfolge: 14
-
-    };
-
-    let karte15: Karte = {
-
-        Wert: "KÃ¶nig",
-        Typ: "Karo",
-        Reihenfolge: 15
-
-    };
-
-    let karte16: Karte = {
-
-        Wert: "Ass",
-        Typ: "Karo",
-        Reihenfolge: 16
-
-    };
-
-    let karte17: Karte = {
-
-        Wert: "7",
-        Typ: "Kreuz",
-        Reihenfolge: 17
-
-    };
-
-    let karte18: Karte = {
-
-        Wert: "8",
-        Typ: "Kreuz",
-        Reihenfolge: 18
-
-    };
-
-    let karte19: Karte = {
-
-        Wert: "9",
-        Typ: "Kreuz",
-        Reihenfolge: 19
-
-    };
-
-    let karte20: Karte = {
-
-        Wert: "10",
-        Typ: "Kreuz",
-        Reihenfolge: 20
-
-    };
-
-    let karte21: Karte = {
-
-        Wert: "Bube",
-        Typ: "Kreuz",
-        Reihenfolge: 21
-
-    };
-
-    let karte22: Karte = {
-
-        Wert: "Dame",
-        Typ: "Kreuz",
-        Reihenfolge: 22
-
-    };
-
-    let karte23: Karte = {
-
-        Wert: "KÃ¶nig",
-        Typ: "Kreuz",
-        Reihenfolge: 23
-
-    };
-
-    let karte24: Karte = {
-
-        Wert: "Ass",
-        Typ: "Kreuz",
-        Reihenfolge: 24
-
-    };
-
-    let karte25: Karte = {
-
-        Wert: "7",
-        Typ: "Herz",
-        Reihenfolge: 25
-
-    };
-
-    let karte26: Karte = {
-
-        Wert: "8",
-        Typ: "Herz",
-        Reihenfolge: 26
-
-    };
-
-
-    let karte27: Karte = {
-
-        Wert: "9",
-        Typ: "Herz",
-        Reihenfolge: 27
-
-    };
-
-
-    let karte28: Karte = {
-
-        Wert: "10",
-        Typ: "Herz",
-        Reihenfolge: 28
-
-    };
-
-    let karte29: Karte = {
-
-        Wert: "Bube",
-        Typ: "Herz",
-        Reihenfolge: 29
-
-    };
-
-    let karte30: Karte = {
-
-        Wert: "Dame",
-        Typ: "Herz",
-        Reihenfolge: 30
-
-    };
-
-    let karte31: Karte = {
-
-        Wert: "KÃ¶nig",
-        Typ: "Herz",
-        Reihenfolge: 31
-
-    };
-
-    let karte32: Karte = {
-
-        Wert: "Ass",
-        Typ: "Herz",
-        Reihenfolge: 32
-
-    };
-
-    let kartenStapel: Karte[] = [karte1, karte2, karte3, karte4, karte5, karte6, karte7, karte8,
-        karte9, karte10, karte11, karte12, karte13, karte14, karte15, karte16, karte17, karte18,
-        karte19, karte20, karte21, karte22, karte23, karte24, karte25, karte26, karte27, karte28,
-        karte29, karte30, karte31, karte32];
-
-
-    let kartenHand: Karte[] = [];
-    let x: number;
-    let y: number;
-
-    function verteileKarten(): void {
-
-        for (y = 0; y < hk; y++) {
-            x = Math.floor((Math.random() * kartenStapel.length));
-
-            kartenHand.push(kartenStapel[x]);
-
-            writeHtml(y);
-
-            kartenStapel.splice(x, 1);
-
-        }
-    }
-
-    verteileKarten();
-
-
-    /* sortiere Karten*/
-    document.getElementById("sortieren").addEventListener("click", sortiereKarten);
-
-    function sortiereKarten() {
-        console.log("Works."); //Nur Test ob click Button funktioniert 
-        kartenHand.sort(vergleich);
-        /*kartenHand.sort(vergleich2);*/
-        document.getElementById("kartenHand").innerHTML = ""; //Alle Karten in dem Div werden gelÃ¶scht
-        for (let i: number = 0; i < kartenHand.length; i++) { //Nur die Anzahl im Array wird sotiert, dann hÃ¶rt Schleife auf 
-            writeHtml(i);
+    function checkKey(_event: KeyboardEvent): void {
+        if (_event.key == " ") {
+            addToHand();
         }
     }
 
 
-    function vergleich(a: Karte, b: Karte): number {
-        let typ1 = a.Typ;
-        let typ2 = b.Typ;
 
-        if (typ1 > typ2) {
-            return 1;
-        }
+    function sortHand(): void {
+        console.log("hallo");
+        hand.sort(compareValue);
+        hand.sort(compareColor);
+        displayCard();
+    }
 
-        if (typ1 < typ2) {
+
+    function compareValue(_a: Card, _b: Card): number {
+        if (_a.value < _b.value) {
             return -1;
         }
-
-        else { return 0 }
-    } // Kann auch Strings vergleichen  
-
-    /*function vergleich2(uno: Karte, dos: Karte): number{
-        let typuno = uno.Wert;
-        let typdos = dos.Wert;
-
-        if(typuno > typdos){
+        if (_a.value > _b.value) {
             return 1;
         }
+        return 0;
+    }
 
-        else if(typuno < typdos){
+    function compareColor(_a: Card, _b: Card): number {
+        if (_a.color < _b.color) {
             return -1;
         }
-
-        else { return 0}
-    }*/ //geht sowieso nicht, da dann die vorherige Sortierung nach Wert aufgehoben werden wÃ¼rde.
-
-
-    /*Augelagert, da ich spÃ¤ter noch einmal darauf zugreife.*/
-    function writeHtml(_y: number) {
-
-        let prodElement = document.createElement("div");
-
-        document.getElementById("kartenHand").appendChild(prodElement);
-
-        let karte: string = `<div class="${kartenHand[_y].Typ}" id="${kartenHand[_y].Reihenfolge}">${kartenHand[_y].Typ} ${kartenHand[_y].Wert}</div>`
-
-        prodElement.innerHTML = karte;
-
+        if (_a.color > _b.color) {
+            return 1;
+        }
+        return 0;
     }
 
 
-    /* ziehe eine Karte zufÃ¤llig wenn Klick und Leertaste*/
+    let stack: Card = { value: null, color: null };
 
-    document.getElementById("stapel").addEventListener("click", zieheEineKarte);
-    document.body.addEventListener("keydown", leertaste);
+    document.addEventListener("DOMContentLoaded", init);
 
-    function leertaste(event: KeyboardEvent) {
-        if (event.keyCode == 32) {
-            zieheEineKarte();
+    function addToHand(): void {
+        if (deck.length > 0) {
+            let temp: number = Math.floor(Math.random() * deck.length);
+            hand.push(deck[temp]);
+            console.log(hand);
+            deck.splice(temp, 1);
+            let deckElement: HTMLDivElement = <HTMLDivElement>document.getElementById("deck");
+            deckElement.innerHTML = deck.length.toString();
+            deckElement.innerHTML += " cards left";
+            displayCard();
         }
+        else { console.log("No cards left to draw...somebody's not counting...."); }
     }
 
-
-    /*ziehe eine Karte vom Stapel wenn du auf den Stapel klickst*/
-    function zieheEineKarte(): void {
-
-        if (kartenStapel.length > 0) {
-
-            let k: number;
-            k = Math.floor((Math.random() * kartenStapel.length));
-
-            let prodElement = document.createElement("div");
-            document.getElementById("kartenHand").appendChild(prodElement);
-
-            kartenHand.push(kartenStapel[k]);
-            /*writeHtmlKarteZiehen(k);*/
-
-            let karteziehen: string = `<div class="${kartenStapel[k].Typ}"> ${kartenStapel[k].Typ} ${kartenStapel[k].Wert} </div>`
-            prodElement.innerHTML = karteziehen;
-
-            kartenStapel.splice(k, 1);
-
-            document.getElementById("kartenHand").innerHTML = ""; //leeren um den Array Bereich mit dem erstellten Array erneut zu fÃ¼llen. Verhindert, dass ich beim Karten ablegen, gezogene Karten vor dem sortieren nicht ablegen kann.
-            for (let v: number = 0; v < kartenHand.length; v++) {
-                writeHtml(v);
-            }
+    function init(): void {
+        document.getElementById("deck").addEventListener("click", addToHand);
+        document.getElementById("sortBtn").addEventListener("click", sortHand);
+        /*document.addEventListener(spaceAddToHand);*/
+        document.getElementById("Handkarten").addEventListener("click", playCard);
+        let notify: string = prompt("How many cards would you like?");
+        let numberOfCards: number = parseInt(notify);
+        if (Number.isNaN(numberOfCards) || numberOfCards < 1 || numberOfCards > deck.length) {
+            init();
         }
-
         else {
-            alert("NÃ¶ keine Karten mehr, Ã„tsch");
-        }
-
-    }
-
-
-
-    /*Karten ablegen*/
-
-    let ablegestapel: Karte[] = [];
-
-
-    document.getElementById("kartenHand").addEventListener("click", karteAblegen) //Wenn irgendwo im kartenHand Bereich geklickt wird, wird der AuslÃ¶ser ermittelt
-
-    function karteAblegen(event: MouseEvent): void {
-
-
-        let s: number = 0;
-
-        while (s < kartenHand.length) { //while oder for, kommt aufs selbe raus.
-            //karteId ist vom Typ HTML Element und speichert Wert, welcher das Event triggert.
-
-            let karteId: HTMLElement = <HTMLElement>event.target;
-
-
-            if (kartenHand[s].Reihenfolge == Number(karteId.getAttribute("id"))) { //Muss von String zur Number werden um beide vergleichen zu kÃ¶nnen // lÃ¤uft Karten im Hand Array einmal durch, wenn es zur geklickten ID passt wird es in den Ablagestapel gepushed
-                ablegestapel.push(kartenHand[s]);
-
-                let prodElement = document.createElement("div");
-                document.getElementById("ablagestapel").appendChild(prodElement);
-                let ablegekarte: string = `<div class="${kartenHand[s].Typ}" id="${kartenHand[s].Reihenfolge}">${kartenHand[s].Typ} ${kartenHand[s].Wert}</div>`
-                prodElement.innerHTML = ablegekarte;
-
-                kartenHand.splice(s, 1);
-                document.getElementById("kartenHand").innerHTML = "";
-
-                for (let o: number = 0; o < kartenHand.length; o++) {
-
-                    writeHtml(o); // Der neue KartenHand Bereich/Array muss nun wieder neu dargestellt werden, das sonst die Karte nicht verschwindet
-
-                }
-
+            for (let i: number = 0; i < numberOfCards; i++) {
+                addToHand();
             }
-            s++;
         }
+
+        /*blablablaevent,*/
 
     }
 
 
+    function displayCard(): void {
+        let div: HTMLDivElement = <HTMLDivElement>document.getElementById("Handkarten");
+        while (div.firstChild) {
+            div.removeChild(div.firstChild);
+        }
+        for (let i: number = 0; i < hand.length; i++) {
+
+            let card: HTMLDivElement = document.createElement("div");
+            card.innerHTML = hand[i].color;
+            card.innerHTML += " ";
+            card.innerHTML += hand[i].value;
+            card.setAttribute("id", i.toString());
+            document.getElementById("Handkarten").appendChild(card);
+            card.classList.add("kartenform");
+            switch (hand[i].color) {
+                case "Karo": card.classList.add("roteKarte"); break;
+                case "Pik": card.classList.add("schwarzeKarte"); break;
+                case "Kreuz": card.classList.add("schwarzeKarte"); break;
+                case "Herz": card.classList.add("roteKarte"); break;
+            }
+        }
+    }
+
+    /*    function spaceAddToHand(_event:KeyboardEvent):void{
+        
+        }*/
+
+    function playCard(_event: Event): void {
+        let div: HTMLDivElement = <HTMLDivElement>_event.target;
+        if (div.getAttribute("id") != "Handkarten") {
+            console.log(stack);
+            stack = hand[parseInt(div.getAttribute("id"))];
+            console.log(stack);
+            hand.splice(parseInt(div.getAttribute("id")), 1);
+            console.log(hand);
+            displayCard();
+
+            if (document.getElementById("stack").firstChild) {
+                console.log(document.getElementById("stack"));
+                document.getElementById("stack").removeChild(document.getElementById("stack").firstChild);
+            }
+            let card: HTMLDivElement = document.createElement("div");
+            card.innerHTML = stack.color;
+            card.innerHTML += " ";
+            card.innerHTML += stack.value;
+            document.getElementById("stack").appendChild(card);
+            card.classList.add("kartenform");
+            switch (stack.color) {
+                case "Karo": card.classList.add("roteKarte"); break;
+                case "Pik": card.classList.add("schwarzeKarte"); break;
+                case "Kreuz": card.classList.add("schwarzeKarte"); break;
+                case "Herz": card.classList.add("roteKarte"); break;
+            }
 
 
 
 
+        }
+
+        /*    stack.innerHTML = (parseInt(div.getAttribute("id")),);
+        stack: HTMLDivElement = <HTMLDivElement> document.createElement("div")
+        console.log(document.getElementById("stack"));
+        stack.innerHTML(div.getAttribute("id"))*/
+    }
 
 
-
-
+}

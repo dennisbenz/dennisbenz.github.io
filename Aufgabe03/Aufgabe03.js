@@ -144,4 +144,4 @@ var Aufgabe3;
         stack.innerHTML(div.getAttribute("id"))*/
     }
 })(Aufgabe3 || (Aufgabe3 = {}));
-//# sourceMappingURL=main.js.map
+//# sourceMappingURL=Aufgabe03.js.map
