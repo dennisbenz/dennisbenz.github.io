@@ -2,17 +2,17 @@ html {
     background: rgb(145, 145, 145);
 }
 header {
-    position: absolute;
+    position: fixed;
     top: 0;
-    height: 50px;
-    width: 110%;
+    height: 40px;
+    width: 100%;
     background: blue;
-    margin-bottom: 8px;
+    margin-bottom: 7px;
     font-size: 1.7rem;
 }
 h1 {
     font-size: 2.0rem;
     position: absolute;
-    top: -20px;
+    top: -10px;
     left: 100px;
 }
