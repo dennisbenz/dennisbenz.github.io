@@ -1,4 +1,4 @@
-namespace task5 {
+namespace task6 {
 
     //Eventlistener ( alle ganz oben :) )
     document.addEventListener("DOMContentLoaded", initialize);
