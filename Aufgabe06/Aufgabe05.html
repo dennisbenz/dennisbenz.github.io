@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Aufgabe05.css">
+    <script src="Aufgabe05.js"></script>
+    <script src="data.js"></script>
+    <title>Eisdealer</title>
+</head>
+
+<body>
+        <form action="mercedes12.herokuapp.com/">
+    <header>
+        <span>KaufdeinEiswoanderst</span>
+    </header>
+    <br>
+    <br>
+    <br>
+    <form name="Darreichungsform" id="Darreichungsform">
+        <fieldset id="container">
+
+           <!-- <fieldset name="Darreichungsform">
+
+                <input type="radio" name="Darreichungsform" value="0.50" id="radio1" class="Waffel" required />
+                <label for="radio1">Waffel groß </label>
+                <input type="radio" name="Darreichungsform" value="0" id="radio2" class="Waffel" required />
+                <label for="radio2">Waffel</label>
+                <input type="radio" name="Darreichungsform" value="0" id="radio3" class="Becher" required />
+                <label for="radio3">Becher groß</label>
+                <input type="radio" name="Darreichungsform" value="0" id="radio4" class="Becher" required />
+                <label for="radio4">Becher klein</label>
+            </fieldset>
+
+            <fieldset name="Sorten">
+                <h2>Eissorten</h2>
+                Erdbeere:
+                <input type="number" name="Stepper" class="Erdbeere" id="0" step="1" min="0" max="6" value="0" />
+                Nutella:
+                <input type="number" name="Stepper" class="Nutella" id="0" step="1" min="0" max="6" value="0" />
+                Schokolade:
+                <input type="number" name="Stepper" class="Schokolade" id="0" step="1" min="0" max="6" value="0" />
+                Himbeer:
+                <input type="number" name="Stepper" class="Himbeer" id="0" step="1" min="0" max="6" value="0" />
+                Apfel:
+                <input type="number" name="Stepper" class="Apfel" id="0" step="1" min="0" max="6" value="0" />
+                Mango:
+                <input type="number" name="Stepper" class="Mango" id="0" step="1" min="0" max="6" value="0" /><br>
+                Melone:
+                <input type="number" name="Stepper" class="Melone" id="0" step="1" min="0" max="6" value="0" />
+                Vanille:
+                <input type="number" name="Stepper" class="Vanille" id="0" step="1" min="0" max="6" value="0" />
+                Cookies:
+                <input type="number" name="Stepper" class="Cookies" id="0" step="1" min="0" max="6" value="0" />
+                Pfirsich:
+                <input type="number" name="Stepper" class="Pfirsich" id="0" step="1" min="0" max="6" value="0" />
+                Joghurt:
+                <input type="number" name="Stepper" class="Joghurt" id="0" step="1" min="0" max="6" value="0" />
+                Zitrone:
+                <input type="number" name="Stepper" class="Zitrone" id="0" step="1" min="0" max="6" value="0" />
+                Kirsche:
+                <input type="number" name="Stepper" class="Kirsche" id="0" step="1" min="0" max="6" value="0" />
+                Amarena:
+                <input type="number" name="Stepper" class="Amarena" id="0" step="1" min="0" max="6" value="0" />
+                Kiwi:
+                <input type="number" name="Stepper" class="Kiwi" id="0" step="1" min="0" max="6" value="0" />
+                Kokos:
+                <input type="number" name="Stepper" class="Kokos" id="0" step="1" min="0" max="6" value="0" />
+                Orange:
+                <input type="number" name="Stepper" class="Orange" id="0" step="1" min="0" max="6" value="0" />
+                <hr />
+                <h2>Exotische Eissorten</h2>
+
+                Schlumpf Eis:
+                <input type="number" name="Stepper" class="Schlumpf Eis" id="0" step="1" min="0" max="6" value="0" />
+
+                Eierlikör:
+                <input type="number" name="Stepper" class="Eierlikör" id="0" step="1" min="0" max="6" value="0" /><br>
+                Dönergeschmack:
+                <input type="number" name="Stepper" class="Dönergeschmack" id="0" step="1" min="0" max="6" value="0" />
+
+            </fieldset>
+            <fieldset name="Topings">
+                <h2> Topings (Alle je + 0,50€</h2>
+                <input type="checkbox" name="Krokant" class="Krokant" id="check1" value="0.50" />
+                <label for="check1">Krokant</label>
+                <input type="checkbox" name="Smarties" class="Smarties" id="check2" value="0.50" />
+                <label for="check2">Smarties</label>
+                <input type="checkbox" name="Schokosoße" class="Schokosoße" id="check3" value="0.50" />
+                <label for="check3">Schokosoße</label>
+                <input type="checkbox" name="Vanillesoße" class="Vanillesoße" id="check3" value="0.50" />
+                <label for="check3">Vanillesoße</label>
+                <input type="checkbox" name="Himbeersoße" class="Himbeersoße" id="check3" value="0.50" />
+                <label for="check3">Himbeersoße</label>
+                <input type="checkbox" name="Sahne" class="Sahne" id="check4" value="0.50" />
+                <label for="check4">Sahne</label>
+            </fieldset> -->
+        </fieldset>
+    </form>
+    <div id="checkout">
+        <fieldset id="text">
+            <h3>Checkout</h3>
+            <legend> Lieferoptionen </legend>
+            Name:
+            <input type="text" name="Name" placeholder="Name" required />
+            <hr />
+            Vorname:
+            <input type="text" name="Vorname" placeholder="Vorname" required />
+            <hr />
+            Straße und Hausnummer
+            <input type="text" name="Straße und Hausnr." placeholder="Straße und Hausnr." required /><br>
+            Ort
+            <input type="text" name="Ort" placeholder="Ort" required />
+            PLZ
+            <input type="text" name="PLZ" placeholder="PLZ" pattern="[0-9]{5}" required />
+            <hr />
+            Mail
+            <input type="email" name="Mail" placeholder="place @ between" required /><br>
+            <input type="radio" name="Versand" value="0.00" id="radio8" class="Standard Versand" required />
+            <label for="radio8">Standard Versand</label>
+            <input type="radio" name="Versand" value="0.00" id="radio9" class="Express Versand" required />
+            <label for="radio9">Express Versand</label>
+        </fieldset>
+        <fieldset id="checkorder">
+            <legend> Check order</legend>
+            <h2>Übersicht:</h2>
+            <ol id="Order">
+
+            </ol>
+            <div class="Preis">Preis gesamt:
+                <span id="showprice">0</span><span class="euro">€</span>
+            </div>
+            <br>
+            <button id="checkButton">Bestellung überprüfen</button>
+        </fieldset>
+
+
+        </script>
+    </div>
+</body>
+
+</html>
