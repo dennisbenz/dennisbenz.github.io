@@ -1,4 +1,4 @@
-namespace task6 {
+namespace task5 {
     export interface HeteroPredefined {
         type: string;
         name: string;

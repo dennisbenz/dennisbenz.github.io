@@ -1,7 +1,7 @@
 import * as Http from "http"; //erstellen eines Http-Objekts,hängt alle möglichen Importe im http-Modul an das Http-Objekt
 
 namespace L05_Server { //namespace wird geöffnet
-    console.log("Starting server"); //In der Console wird starting Server ausgegeben
+    console.log("Starting server");//In der Console wird starting Server ausgegeben
     let port: number = Number(process.env.PORT); //erstellt die Variable port, Typ number, der aktuelle Wert soll dem Port entsprechen,damit der Server weis auf welchen Listener er hören soll
     if (!port)//falls kein Wert für Port festgelegt wurde...
         port = 8100; // ist der Wert 8100

@@ -1,6 +1,6 @@
-var task6;
-(function (task6) {
-    task6.product = {
+var task5;
+(function (task5) {
+    task5.product = {
         "Wähle deine Anrichtung:": [
             { type: "radio", name: "waffelbecher", price: 0.50, value: 0, id: "radio1", class: "Waffel", minimum: 0, maximum: 0 },
             { type: "radio", name: "waffelbecher", price: 0.00, value: 0, id: "radio2", class: "Becher", minimum: 0, maximum: 0 }
@@ -39,5 +39,5 @@ var task6;
         {type:"number", name:"Stepper", value:1.5, id:"check5", class:"1 Kugel Nuss"}
     ],
     }; */
-})(task6 || (task6 = {}));
+})(task5 || (task5 = {}));
 //# sourceMappingURL=data.js.map

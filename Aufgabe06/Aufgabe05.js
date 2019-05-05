@@ -5,7 +5,7 @@ var task6;
     document.addEventListener("DOMContentLoaded", buttonEvent);
     //Aufruf showHomoArr, Kollektion der fieldsets, Eventlistener change und preisBerechnen Verweis
     function initialize(_event) {
-        showHomoArr(task6.product);
+        showHomoArr(product);
         let fieldsets = document.getElementsByTagName("fieldset");
         for (let i = 0; i < fieldsets.length; i++) {
             let fieldset = fieldsets[i];
