@@ -1,11 +1,11 @@
-var task6;
-(function (task6) {
+var task5;
+(function (task5) {
     //Eventlistener ( alle ganz oben :) )
     document.addEventListener("DOMContentLoaded", initialize);
     document.addEventListener("DOMContentLoaded", buttonEvent);
     //Aufruf showHomoArr, Kollektion der fieldsets, Eventlistener change und preisBerechnen Verweis
     function initialize(_event) {
-        showHomoArr(product);
+        showHomoArr(task5.product);
         let fieldsets = document.getElementsByTagName("fieldset");
         for (let i = 0; i < fieldsets.length; i++) {
             let fieldset = fieldsets[i];
@@ -108,5 +108,5 @@ var task6;
             alert(`${leereFormulare} fehlt noch`);
         }
     }
-})(task6 || (task6 = {}));
+})(task5 || (task5 = {}));
 //# sourceMappingURL=Aufgabe05.js.map
