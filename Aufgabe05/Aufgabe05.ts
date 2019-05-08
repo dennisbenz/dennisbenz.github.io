@@ -2,11 +2,11 @@ namespace task5 {
 
     //Eventlistener ( alle ganz oben :) )
     document.addEventListener("DOMContentLoaded", initialize);
-    document.addEventListener("DOMContentLoaded", buttonEvent);
 
 
     //Aufruf showHomoArr, Kollektion der fieldsets, Eventlistener change und preisBerechnen Verweis
     function initialize(_event: Event): void {
+        buttonEvent();
         showHomoArr(product);
         let fieldsets: HTMLCollectionOf<HTMLFieldSetElement> = document.getElementsByTagName("fieldset");
 
@@ -24,10 +24,20 @@ namespace task5 {
     function buttonEvent(): void {
         let button: HTMLButtonElement = <HTMLButtonElement>document.getElementById("checkButton");
         button.addEventListener("click", pruefungDerDaten);
+        /* sendRequestWithCustomData(button); */
         /* document.getElementById("checkButton").addEventListener("click", pruefungDerDaten); */
         /* console.log(showPrice + "wurde ausgeführt") */
         /*  let fieldsets: HTMLCollectionOf< HTMLFieldSetElement> = document.getElementsByTagName("fieldset"); */
     }
+
+    //Funktion für die Datenübertragung
+    /* function sendRequestWithCustomData(_y:HeteroPredefined): void {
+        let xhr: XMLHttpRequest = new XMLHttpRequest();
+        xhr.open("GET", address + "?color=" + _y, true);
+        xhr.addEventListener("readystatechange", handleStateChange);
+        xhr.send();
+    } */
+
 
     //Anzeigen von HomogenousArray und Erstellung von hr und p Elementen zur Abgrenzung
 
@@ -53,7 +63,6 @@ namespace task5 {
         let label: HTMLLabelElement = document.createElement("label");
         label.setAttribute("for", _y.id);
         label.innerText = _y.class;
-
         inputs.setAttribute("type", _y.type);
         inputs.setAttribute("name", _y.name);
         inputs.setAttribute("alt", _y.price.toString());
@@ -65,6 +74,10 @@ namespace task5 {
         inputs.setAttribute("max", _y.maximum.toString());
         document.getElementById("container").appendChild(label);
         label.appendChild(inputs);
+
+        /* if(_y.id == "radio1" || "radio2") {
+            inputs.setAttribute("name", "Darreichungsform");
+        } */
     }
 
 
@@ -96,13 +109,6 @@ namespace task5 {
                     document.getElementById("Order").appendChild(orderName);
                 }
             }
-            /*  if (input[i].id == "" && input[i].checked == true) {
-                 let preis: number = Number(input[i].value);
-                 n += preis;
-                 let OrderName: HTMLLIElement = document.createElement("li");
-                 OrderName.innerHTML = `<p>${input[i].className}</p>`
-                 document.getElementById("Order").appendChild(OrderName);
-             } */
         }
 
         document.getElementById("showprice").innerHTML = n.toFixed(2).toString();
@@ -111,22 +117,39 @@ namespace task5 {
     function pruefungDerDaten(_event: Event): void {
         let leereFormulare: string[] = [];
         let pruefung: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
+        let sorteAuswählen: number = 0;
+        let anrichtungAuswählen: number = 0;
         for (let i: number = 0; i < pruefung.length; i++) {
-            if (pruefung[i].value == "") {
-                let feldName: string = pruefung[i].name;
-                leereFormulare.push(feldName);
+            if (pruefung[i].type == "text") {
+                if (pruefung[i].value == "") {
+                    let feldName: string = pruefung[i].name;
+                    leereFormulare.push(feldName);
+                }
             }
-            if (pruefung[i].checked == false) {
-                let feldClass: string = pruefung[i].className;
-                leereFormulare.push(feldClass);
+            if (pruefung[i].type == "radio") {
+                if (pruefung[i].checked) {
+                    anrichtungAuswählen = 1;
+                }
             }
+            if (pruefung[i].type == "number") {
+                if (Number(pruefung[i].value) > 0) {
+                    sorteAuswählen = 1;
+                }
+            }
+        }
+        if (anrichtungAuswählen == 0) {
+            alert("Bitte eine Anrichtung auswählen");
+        }
+        if (sorteAuswählen == 0) {
+            alert("Bitte mindestens eine Sorte auswählen");
         }
         if (leereFormulare.length == 0) {
             alert("Ihre Bestellung wurde erfolgreich abgesendet! Vielen Dank:)");
         }
-        else { alert(`${leereFormulare} fehlt noch`); }
+        else {
+            alert(`${leereFormulare} fehlt noch`);
+        }
     }
-
 
 
 }
