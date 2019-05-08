@@ -2,9 +2,9 @@ var task5;
 (function (task5) {
     //Eventlistener ( alle ganz oben :) )
     document.addEventListener("DOMContentLoaded", initialize);
-    document.addEventListener("DOMContentLoaded", buttonEvent);
     //Aufruf showHomoArr, Kollektion der fieldsets, Eventlistener change und preisBerechnen Verweis
     function initialize(_event) {
+        buttonEvent();
         showHomoArr(task5.product);
         let fieldsets = document.getElementsByTagName("fieldset");
         for (let i = 0; i < fieldsets.length; i++) {
@@ -18,10 +18,18 @@ var task5;
     function buttonEvent() {
         let button = document.getElementById("checkButton");
         button.addEventListener("click", pruefungDerDaten);
+        /* sendRequestWithCustomData(button); */
         /* document.getElementById("checkButton").addEventListener("click", pruefungDerDaten); */
         /* console.log(showPrice + "wurde ausgeführt") */
         /*  let fieldsets: HTMLCollectionOf< HTMLFieldSetElement> = document.getElementsByTagName("fieldset"); */
     }
+    //Funktion für die Datenübertragung
+    /* function sendRequestWithCustomData(_y:HeteroPredefined): void {
+        let xhr: XMLHttpRequest = new XMLHttpRequest();
+        xhr.open("GET", address + "?color=" + _y, true);
+        xhr.addEventListener("readystatechange", handleStateChange);
+        xhr.send();
+    } */
     //Anzeigen von HomogenousArray und Erstellung von hr und p Elementen zur Abgrenzung
     function showHomoArr(_homoVar) {
         for (let array in _homoVar) {
@@ -53,6 +61,9 @@ var task5;
         inputs.setAttribute("max", _y.maximum.toString());
         document.getElementById("container").appendChild(label);
         label.appendChild(inputs);
+        /* if(_y.id == "radio1" || "radio2") {
+            inputs.setAttribute("name", "Darreichungsform");
+        } */
     }
     //Preisberechnung und Erstellung von p Tag im Checkout
     function preisBerechnen(_event) {
@@ -78,28 +89,37 @@ var task5;
                     document.getElementById("Order").appendChild(orderName);
                 }
             }
-            /*  if (input[i].id == "" && input[i].checked == true) {
-                 let preis: number = Number(input[i].value);
-                 n += preis;
-                 let OrderName: HTMLLIElement = document.createElement("li");
-                 OrderName.innerHTML = `<p>${input[i].className}</p>`
-                 document.getElementById("Order").appendChild(OrderName);
-             } */
         }
         document.getElementById("showprice").innerHTML = n.toFixed(2).toString();
     }
     function pruefungDerDaten(_event) {
         let leereFormulare = [];
         let pruefung = document.getElementsByTagName("input");
+        let sorteAuswählen = 0;
+        let anrichtungAuswählen = 0;
         for (let i = 0; i < pruefung.length; i++) {
-            if (pruefung[i].value == "") {
-                let feldName = pruefung[i].name;
-                leereFormulare.push(feldName);
+            if (pruefung[i].type == "text") {
+                if (pruefung[i].value == "") {
+                    let feldName = pruefung[i].name;
+                    leereFormulare.push(feldName);
+                }
             }
-            if (pruefung[i].checked == false) {
-                let feldClass = pruefung[i].className;
-                leereFormulare.push(feldClass);
+            if (pruefung[i].type == "radio") {
+                if (pruefung[i].checked) {
+                    anrichtungAuswählen = 1;
+                }
             }
+            if (pruefung[i].type == "number") {
+                if (Number(pruefung[i].value) > 0) {
+                    sorteAuswählen = 1;
+                }
+            }
+        }
+        if (anrichtungAuswählen == 0) {
+            alert("Bitte eine Anrichtung auswählen");
+        }
+        if (sorteAuswählen == 0) {
+            alert("Bitte mindestens eine Sorte auswählen");
         }
         if (leereFormulare.length == 0) {
             alert("Ihre Bestellung wurde erfolgreich abgesendet! Vielen Dank:)");
