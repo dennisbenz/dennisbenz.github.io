@@ -70,7 +70,7 @@ namespace task5 {
         inputs.setAttribute("value", _y.value.toString());
         inputs.setAttribute("id", _y.id);
         inputs.setAttribute("class", _y.class);
-        inputs.setAttribute("min", _y.minimum.toString());
+        inputs.setAttribute("min",  _y.minimum.toString());
         inputs.setAttribute("max", _y.maximum.toString());
         document.getElementById("container").appendChild(label);
         label.appendChild(inputs);

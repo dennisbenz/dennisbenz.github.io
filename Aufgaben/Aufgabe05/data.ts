@@ -23,9 +23,9 @@ namespace task5 {
 
         "Icecreams:": [
             {
-                type: "number", name: "Schokolade", price: 1, value: 0, id: "Schokolade", class: "Schokolade", minimum: 0, maximum: 6
+                type: "number", name: "Minze", price: 1, value: 0, id: "Minze", class: "Minze", minimum: 0, maximum: 6
             },
-            { type: "number", name: "Nuss", price: 1, value: 0, id: "Nuss", class: "Nuss", minimum: 0, maximum: 6 },
+            { type: "number", name: "Eierlikör", price: 1, value: 0, id: "Eierlikör", class: "Eierlikör", minimum: 0, maximum: 6 },
             { type: "number", name: "Cookies", price: 1, value: 0, id: "Cookies", class: "Cookies", minimum: 0, maximum: 6 },
             {
                 type: "number", name: "Stracciatella", price: 1, value: 0, id: "Stracciatella", class: "Stracciatella", minimum: 0,
@@ -36,6 +36,11 @@ namespace task5 {
                     6
             },
             { type: "number", name: "Mango", price: 1, value: 0, id: "Mango", class: "Mango", minimum: 0, maximum: 6 },
+            { type: "number", name: "Schokolade", price: 1, value: 0, id: "Schokolade", class: "Schokolade", minimum: 0, maximum: 6 },
+            { type: "number", name: "Nutella", price: 1, value: 0, id: "Nutella", class: "Nutella", minimum: 0, maximum: 6 },
+            { type: "number", name: "Amarena", price: 1, value: 0, id: "Amarena", class: "Amarena", minimum: 0, maximum: 6 },
+            { type: "number", name: "Nuss", price: 1, value: 0, id: "Nuss", class: "Nuss", minimum: 0, maximum: 6 },
+            { type: "number", name: "Pistazie", price: 1, value: 0, id: "Pistazie", class: "Pistazie", minimum: 0, maximum: 6 },
             { type: "number", name: "Erdbeere", price: 1, value: 0, id: "Erdbeere", class: "Erdbeere", minimum: 0, maximum: 6 },
             { type: "number", name: "Vanille", price: 1, value: 0, id: "Vanille", class: "Vanille", minimum: 0, maximum: 6 },
             { type: "number", name: "Banane", price: 1, value: 0, id: "Banane", class: "Banane", minimum: 0, maximum: 6 },
