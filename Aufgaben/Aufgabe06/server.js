@@ -23,7 +23,7 @@ var L05_Server;
         /* let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
         for (let key in url.query)
             _response.write(key + ":" + url.query[key] + "<br/>") */
-        //_response.write(_request.url);
+        _response.write(_request.url);
         _response.end();
     }
 })(L05_Server || (L05_Server = {}));

@@ -27,7 +27,7 @@ namespace L05_Server {
 		for (let key in url.query)
 			_response.write(key + ":" + url.query[key] + "<br/>") */
 
-        //_response.write(_request.url);
+        _response.write(_request.url);
 
         _response.end();
     }
