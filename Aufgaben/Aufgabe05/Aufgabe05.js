@@ -23,13 +23,6 @@ var task5;
         /* console.log(showPrice + "wurde ausgeführt") */
         /*  let fieldsets: HTMLCollectionOf< HTMLFieldSetElement> = document.getElementsByTagName("fieldset"); */
     }
-    //Funktion für die Datenübertragung
-    /* function sendRequestWithCustomData(_y:HeteroPredefined): void {
-        let xhr: XMLHttpRequest = new XMLHttpRequest();
-        xhr.open("GET", address + "?color=" + _y, true);
-        xhr.addEventListener("readystatechange", handleStateChange);
-        xhr.send();
-    } */
     //Anzeigen von HomogenousArray und Erstellung von hr und p Elementen zur Abgrenzung
     function showHomoArr(_homoVar) {
         for (let array in _homoVar) {
