@@ -6,6 +6,9 @@ var task7;
             { type: "radio", name: "Anrichtung", price: 0.00, value: 0, id: "radio2", class: "Becher", minimum: 0, maximum: 0 }
         ],
         "Icecreams": [
+            { type: "number", name: "Minze", price: 1, value: 0, id: "Minze", class: "Minze", minimum: 0, maximum: 6 },
+            { type: "number", name: "Eierlikör", price: 1, value: 0, id: "Eierlikör", class: "Eierlikör", minimum: 0, maximum: 6 },
+            { type: "number", name: "Amarena", price: 1, value: 0, id: "Amarena", class: "Amarena", minimum: 0, maximum: 6 },
             { type: "number", name: "Schokolade", price: 1, value: 0, id: "Schokolade", class: "Schokolade", minimum: 0, maximum: 6 },
             { type: "number", name: "Nuss", price: 1, value: 0, id: "Nuss", class: "Nuss", minimum: 0, maximum: 6 },
             { type: "number", name: "Cookies", price: 1, value: 0, id: "Cookies", class: "Cookies", minimum: 0, maximum: 6 },
