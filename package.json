@@ -5,7 +5,7 @@
 	"author": "Dennis Vimon",
 	"main": "Server.js",
 	"scripts": {
-		"start": "node Aufgaben/Aufgabe07/server.js"
+		"start": "node Aufgaben/Aufgabe09/server.js"
 	},
 	"engines": {
 		"node": "8.11.3"
