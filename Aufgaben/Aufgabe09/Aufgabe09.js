@@ -2,7 +2,7 @@ var DBClient;
 (function (DBClient) {
     window.addEventListener("load", init);
     //let serverAddress: string = "http://localhost:8100/";
-    let serverAddress = "https://benzeia2.herokuapp.com/";
+    let serverAddress = "https://dennisbenz3.herokuapp.com/";
     function init(_event) {
         console.log("Init");
         let insertButton = document.getElementById("insert");
