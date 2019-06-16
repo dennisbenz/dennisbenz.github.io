@@ -7,6 +7,11 @@ var L09;
         canvas = document.getElementsByTagName("canvas")[0];
         crc = canvas.getContext("2d");
         drawinside();
+        for (let i = 0; i < 40; i++) {
+            let x = Math.random() * canvas.width;
+            let y = Math.random() * canvas.height;
+            drawkies(x, y);
+        }
         for (let i = 0; i < 8; i++) {
             let x = Math.random() * canvas.width;
             let y = Math.random() * canvas.height;
@@ -17,11 +22,13 @@ var L09;
             let y = Math.random() * canvas.height;
             drawblase(x, y);
         }
-        for (let i = 0; i < 40; i++) {
-            let x = Math.random() * canvas.width;
-            let y = Math.random() * canvas.height;
-            drawkies(x, y);
-        }
+    }
+    function drawkies(_x, _y) {
+        let kies = new Path2D();
+        kies.rect(_x, _y, 6, 6);
+        crc.fillStyle = "grey";
+        crc.fill(kies);
+        crc.stroke();
     }
     function drawobjects(_x, _y) {
         let flossehinten = new Path2D();
@@ -62,13 +69,6 @@ var L09;
         crc.fillStyle = "darkblue";
         crc.fill(blase2);
         crc.stroke(blase2);
-    }
-    function drawkies(_x, _y) {
-        let kies = new Path2D();
-        kies.rect(_x, _y, 6, 6);
-        crc.fillStyle = "grey";
-        crc.fill(kies);
-        crc.stroke();
     }
     function drawinside() {
         let wasser = new Path2D();

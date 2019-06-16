@@ -1,86 +1,80 @@
-namespace L09 {
+namespace task11 {
     document.addEventListener("DOMContentLoaded", init);
-    let crc: CanvasRenderingContext2D;
+    export let crc: CanvasRenderingContext2D;
     let canvas: HTMLCanvasElement;
+    let fish1Array: Fish1[] = [];
+    let fish2Array: Fish2[] = [];
+    let bubbleArray: Bubble[] = [];
+    let bubble2Array: Bubble2[] = [];
+    let fps: number = 30;
+    let imageData: ImageData;
 
     function init(): void {
         canvas = document.getElementsByTagName("canvas")[0];
         crc = canvas.getContext("2d");
-        drawinside();
-        for (let i: number = 0; i < 40; i++) {
+
+        drawBackground();
+
+        imageData = crc.getImageData(0, 0, canvas.width, canvas.height);
+
+        for (let i: number = 0; i < 10; i++) {
             let x: number = Math.random() * canvas.width;
             let y: number = Math.random() * canvas.height;
-            drawkies(x, y);
+            let dx: number = Math.random() * 10 - 5;
+            let dy: number = Math.random() * 2 - 1;
+            let fish1: Fish1;
+            fish1 = new Fish1();
+            fish1.x = x;
+            fish1.y = y;
+            fish1.dx = dx;
+            fish1.dy = dy;
+            fish1Array.push(fish1);
+            fish1.draw();
         }
-        for (let i: number = 0; i < 8; i++) {
+
+        for (let i: number = 0; i < 10; i++) {
             let x: number = Math.random() * canvas.width;
             let y: number = Math.random() * canvas.height;
-            drawobjects(x, y);
+            let dx: number = Math.random() * 5 - 10;
+            let fish2: Fish2;
+            fish2 = new Fish2();
+            fish2.x = x;
+            fish2.y = y;
+            fish2.dx = dx;
+            fish2Array.push(fish2);
+            fish2.draw();
         }
-        for (let i: number = 0; i < 6; i++) {
+
+        for (let i: number = 0; i < 12; i++) {
             let x: number = Math.random() * canvas.width;
             let y: number = Math.random() * canvas.height;
-            drawblase(x, y);
+            let dy: number = Math.random() * 10 - 5;
+            let bubble: Bubble;
+            bubble = new Bubble();
+            bubble.x = x;
+            bubble.y = y;
+            bubble.dy = dy;
+            bubbleArray.push(bubble);
+            bubble.draw();
         }
-        
+        for (let i: number = 0; i < 12; i++) {
+            let x: number = Math.random() * canvas.width;
+            let y: number = Math.random() * canvas.height;
+            let dy: number = Math.random() * 10 - 5;
+            let bubble2: Bubble2;
+            bubble2 = new Bubble2();
+            bubble2.x = x;
+            bubble2.y = y;
+            bubble2.dy = dy;
+            bubble2Array.push(bubble2);
+            bubble2.draw();
+        }
+
+        update();
 
     }
-    function drawkies(_x: number, _y: number): void {
-        let kies: Path2D = new Path2D();
-        kies.rect(_x, _y, 6, 6);
-        crc.fillStyle = "grey";
-        crc.fill(kies);
-        crc.stroke();
-    }
 
-    function drawobjects(_x: number, _y: number): void {
-        let flossehinten: Path2D = new Path2D();
-        flossehinten.moveTo(_x + 50, _y);
-        flossehinten.lineTo(_x + 70, _y - 10);
-        flossehinten.lineTo(_x + 70, _y + 10);
-        flossehinten.closePath();
-        crc.fillStyle = "brown";
-        crc.fill(flossehinten);
-        crc.stroke(flossehinten);
-        //fisch
-        let fisch: Path2D = new Path2D();
-        fisch.arc(_x, _y, 55, 0, 2 * Math.PI);
-        crc.fillStyle = "grey";
-        crc.fill(fisch);
-        crc.stroke(fisch);
-
-        let augeeins: Path2D = new Path2D();
-        augeeins.arc(_x - 35, _y - 5, 8, 0, 2 * Math.PI);
-        crc.fillStyle = "white";
-        crc.fill(augeeins);
-        crc.stroke(augeeins);
-
-        let augezwei: Path2D = new Path2D();
-        augezwei.arc(_x - 39, _y - 5, 3, 0, 2 * Math.PI);
-        crc.fillStyle = "black";
-        crc.fill(augezwei);
-        crc.stroke(augezwei);
-    }
-
-    function drawblase(_x: number, _y: number): void {
-        //Blase
-        let blase1: Path2D = new Path2D();
-        blase1.arc(_x, _y, 12, 0, 2 * Math.PI);
-        crc.fillStyle = "lightblue";
-        crc.fill(blase1);
-        crc.stroke(blase1);
-
-        //Blase2
-        let blase2: Path2D = new Path2D();
-        blase2.arc(_x + 10, _y - 30, 6, 0, 2 * Math.PI);
-        crc.fillStyle = "darkblue";
-        crc.fill(blase2);
-        crc.stroke(blase2);
-
-    }
-    
-
-    function drawinside(): void {
+    function drawBackground(): void {
         let wasser: Path2D = new Path2D();
         wasser.rect(0, 0, 1300, 600);
         crc.fillStyle = "steelblue";
@@ -93,6 +87,13 @@ namespace L09 {
         crc.fillStyle = "sandybrown";
         crc.fill(sand);
         crc.stroke();
+
+        let kies: Path2D = new Path2D();
+        kies.rect(this.x, this.y, 6, 6);
+        crc.fillStyle = "grey";
+        crc.fill(kies);
+        crc.stroke();
+
 
         let stein: Path2D = new Path2D();
         stein.moveTo(1100, 550);
@@ -196,7 +197,24 @@ namespace L09 {
 
     }
 
+    function update(): void {
+        window.setTimeout(update, 1000 / fps);
+        crc.clearRect(0, 0, canvas.width, canvas.height);
+        crc.putImageData(imageData, 0, 0);
 
+        for (let i: number = 0; i < fish1Array.length; i++) {
+            fish1Array[i].update();
+        }
+        for (let i: number = 0; i < fish2Array.length; i++) {
+            fish2Array[i].update();
+        }
+        for (let i: number = 0; i < bubbleArray.length; i++) {
+            bubbleArray[i].update();
+        }
+        for (let i: number = 0; i < bubble2Array.length; i++) {
+            bubble2Array[i].update();
+        }
+    }
 
 
 }
