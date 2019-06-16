@@ -40,7 +40,7 @@ var task11;
         for (let i = 0; i < 12; i++) {
             let x = Math.random() * canvas.width;
             let y = Math.random() * canvas.height;
-            let dy = Math.random() * 10 - 5;
+            let dy = Math.random() * -1 - 1;
             let bubble;
             bubble = new task11.Bubble();
             bubble.x = x;

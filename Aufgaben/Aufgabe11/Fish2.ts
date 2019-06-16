@@ -42,19 +42,9 @@ namespace task11 {
 
         move(): void {
             this.x += this.dx;
-            this.y += this.dy;
-            if (this.x + 80 < 0) {
-                this.x = 1080;
+            if (this.x - 100 > 1500) {
+                this.x = - 250;
             }
-            if (this.x - 80 > 1000) {
-                this.x = - 80;
-            }
-            if (this.y - 80 > 600) {
-                this.y = - 80;
-            }
-            if (this.y + 80 < 0) {
-                this.y = 680;
-            }
-        }
+}
     }
 }

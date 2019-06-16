@@ -48,7 +48,7 @@ namespace task11 {
         for (let i: number = 0; i < 12; i++) {
             let x: number = Math.random() * canvas.width;
             let y: number = Math.random() * canvas.height;
-            let dy: number = Math.random() * 10 - 5;
+            let dy: number = Math.random() * -1 - 1;
             let bubble: Bubble;
             bubble = new Bubble();
             bubble.x = x;
