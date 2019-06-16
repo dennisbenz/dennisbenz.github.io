@@ -32,7 +32,7 @@ namespace task11 {
             fish1.draw();
         }
 
-        for (let i: number = 0; i < 10; i++) {
+        for (let i: number = 0; i < 9; i++) {
             let x: number = Math.random() * canvas.width;
             let y: number = Math.random() * canvas.height;
             let dx: number = Math.random() * 5 - 10;

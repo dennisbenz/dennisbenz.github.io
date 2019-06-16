@@ -27,7 +27,7 @@ var task11;
             fish1Array.push(fish1);
             fish1.draw();
         }
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 9; i++) {
             let x = Math.random() * canvas.width;
             let y = Math.random() * canvas.height;
             let dx = Math.random() * 5 - 10;
@@ -44,7 +44,7 @@ var task11;
             let y = Math.random() * canvas.height;
             let dy = Math.random() * 10 - 5;
             let bubble;
-            bubble = new Bubble();
+            bubble = new task11.Bubble();
             bubble.x = x;
             bubble.y = y;
             bubble.dy = dy;
@@ -56,7 +56,7 @@ var task11;
             let y = Math.random() * canvas.height;
             let dy = Math.random() * 10 - 5;
             let bubble2;
-            bubble2 = new Bubble2();
+            bubble2 = new task11.Bubble2();
             bubble2.x = x;
             bubble2.y = y;
             bubble2.dy = dy;

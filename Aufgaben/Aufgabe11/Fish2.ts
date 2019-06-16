@@ -35,3 +35,26 @@ namespace task11 {
             crc.fill(augezwei);
             crc.stroke(augezwei);
         }
+        update(): void {
+            this.move();
+            this.draw();
+        }
+
+        move(): void {
+            this.x += this.dx;
+            this.y += this.dy;
+            if (this.x + 80 < 0) {
+                this.x = 1080;
+            }
+            if (this.x - 80 > 1000) {
+                this.x = - 80;
+            }
+            if (this.y - 80 > 600) {
+                this.y = - 80;
+            }
+            if (this.y + 80 < 0) {
+                this.y = 680;
+            }
+        }
+    }
+}
