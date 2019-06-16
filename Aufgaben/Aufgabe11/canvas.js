@@ -17,13 +17,11 @@ var task11;
             let x = Math.random() * canvas.width;
             let y = Math.random() * canvas.height;
             let dx = Math.random() * 10 - 5;
-            let dy = Math.random() * 2 - 1;
             let fish1;
             fish1 = new task11.Fish1();
             fish1.x = x;
             fish1.y = y;
             fish1.dx = dx;
-            fish1.dy = dy;
             fish1Array.push(fish1);
             fish1.draw();
         }

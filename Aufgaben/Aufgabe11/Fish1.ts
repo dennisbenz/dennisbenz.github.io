@@ -4,7 +4,7 @@ namespace task11 {
         y: number;
 
         dx: number;
-        dy: number;
+        
 
 
         draw(): void {
