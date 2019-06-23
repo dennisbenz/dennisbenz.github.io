@@ -18,7 +18,7 @@ namespace task11 {
             crc.stroke(flossehinten);
 
             let fisch: Path2D = new Path2D();
-            fisch.arc(this.x, this.y, -55, 0, 2 * Math.PI);
+            fisch.arc(this.x, this.y, -25, 0, 2 * Math.PI);
             crc.fillStyle = "yellow";
             crc.fill(fisch);
             crc.stroke(fisch);
@@ -42,7 +42,7 @@ namespace task11 {
 
         move(): void {
             this.x += this.dx;
-            if (this.x - 100 > 1500) {
+            if (this.x - 100 > 1300) {
                 this.x = - 250;
             }
 }
