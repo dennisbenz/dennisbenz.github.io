@@ -18,13 +18,13 @@ namespace task11 {
             crc.stroke(flossehinten);
 
             let fisch: Path2D = new Path2D();
-            fisch.arc(this.x, this.y, 25, 0, 2 * Math.PI);
+            fisch.arc(this.x, this.y, 55, 0, 2 * Math.PI);
             crc.fillStyle = "yellow";
             crc.fill(fisch);
             crc.stroke(fisch);
 
             let augeeins: Path2D = new Path2D();
-            augeeins.arc(this.x + 35, this.y - 5, 8, 0, 2 * Math.PI);
+            augeeins.arc(this.x + 35, this.y - 5, 6, 0, 2 * Math.PI);
             crc.fillStyle = "white";
             crc.fill(augeeins);
             crc.stroke(augeeins);

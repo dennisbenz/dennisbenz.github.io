@@ -20,7 +20,7 @@ namespace task11 {
         for (let i: number = 0; i < 10; i++) {
             let x: number = Math.random() * canvas.width;
             let y: number = Math.random() * canvas.height;
-            let dx: number = Math.random() * 10 - 5;
+            let dx: number = Math.random() * 2 - 3;
             
             let fish1: Fish1;
             fish1 = new Fish1();
