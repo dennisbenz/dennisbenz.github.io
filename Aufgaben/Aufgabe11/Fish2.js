@@ -11,7 +11,7 @@ var task11;
             task11.crc.fill(flossehinten);
             task11.crc.stroke(flossehinten);
             let fisch = new Path2D();
-            fisch.arc(this.x, this.y, -25, 0, 2 * Math.PI);
+            fisch.arc(this.x, this.y, 25, 0, 2 * Math.PI);
             task11.crc.fillStyle = "yellow";
             task11.crc.fill(fisch);
             task11.crc.stroke(fisch);

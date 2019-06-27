@@ -18,7 +18,7 @@ namespace task11 {
             crc.stroke(flossehinten);
 
             let fisch: Path2D = new Path2D();
-            fisch.arc(this.x, this.y, -25, 0, 2 * Math.PI);
+            fisch.arc(this.x, this.y, 25, 0, 2 * Math.PI);
             crc.fillStyle = "yellow";
             crc.fill(fisch);
             crc.stroke(fisch);
