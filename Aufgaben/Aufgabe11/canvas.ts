@@ -35,7 +35,7 @@ namespace task11 {
         for (let i: number = 0; i < 9; i++) {
             let x: number = Math.random() * canvas.width;
             let y: number = Math.random() * canvas.height;
-            let dx: number = Math.random() * 3 - 2;
+            let dx: number = Math.random() * 5 - 2;
 
             let fish2: Fish2;
             fish2 = new Fish2();

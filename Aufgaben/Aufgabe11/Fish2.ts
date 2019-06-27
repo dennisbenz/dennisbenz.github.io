@@ -9,9 +9,9 @@ namespace task11 {
 
         draw(): void {
             let flossehinten: Path2D = new Path2D();
-            flossehinten.moveTo(this.x - 50, this.y);
-            flossehinten.lineTo(this.x - 70, this.y - 10);
-            flossehinten.lineTo(this.x - 70, this.y + 10);
+            flossehinten.moveTo(this.x - 45, this.y);
+            flossehinten.lineTo(this.x - 65, this.y - 10);
+            flossehinten.lineTo(this.x - 65, this.y + 10);
             flossehinten.closePath();
             crc.fillStyle = "red";
             crc.fill(flossehinten);

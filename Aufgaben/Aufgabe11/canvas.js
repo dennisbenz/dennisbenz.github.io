@@ -28,7 +28,7 @@ var task11;
         for (let i = 0; i < 9; i++) {
             let x = Math.random() * canvas.width;
             let y = Math.random() * canvas.height;
-            let dx = Math.random() * 3 - 2;
+            let dx = Math.random() * 5 - 2;
             let fish2;
             fish2 = new task11.Fish2();
             fish2.x = x;

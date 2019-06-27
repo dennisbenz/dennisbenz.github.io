@@ -3,9 +3,9 @@ var task11;
     class Fish2 {
         draw() {
             let flossehinten = new Path2D();
-            flossehinten.moveTo(this.x - 50, this.y);
-            flossehinten.lineTo(this.x - 70, this.y - 10);
-            flossehinten.lineTo(this.x - 70, this.y + 10);
+            flossehinten.moveTo(this.x - 45, this.y);
+            flossehinten.lineTo(this.x - 65, this.y - 10);
+            flossehinten.lineTo(this.x - 65, this.y + 10);
             flossehinten.closePath();
             task11.crc.fillStyle = "red";
             task11.crc.fill(flossehinten);
