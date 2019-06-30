@@ -1,4 +1,4 @@
-namespace task11 {
+namespace task12 {
     export class Bubble2 {
         x: number;
         y: number;

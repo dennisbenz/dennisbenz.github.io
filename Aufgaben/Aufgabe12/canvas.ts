@@ -1,4 +1,4 @@
-namespace task11 {
+namespace task12 {
     document.addEventListener("DOMContentLoaded", init);
     export let crc: CanvasRenderingContext2D;
     let canvas: HTMLCanvasElement;
