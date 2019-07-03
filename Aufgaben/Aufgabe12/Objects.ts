@@ -1,20 +1,28 @@
-namespace A12 {
-    export class Object {
+namespace task12 {
+    export class Objects {
         x: number;
         y: number;
-    }
 
-    constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-    }
+        dx: number;
+        dy: number;
 
-    draw(): void {
+        constructor() {
+            //;
+        }
 
-    }
+        move(): void {
+            //;
+        }
 
-    update(): void {
-        this.move();
-        this.draw();
+        draw(): void {
+            //;
+        }
+
+        update(): void {
+            this.move();
+            this.draw();
+        }
+
+
     }
 }

@@ -1,9 +1,16 @@
 namespace task12 {
-    export class Bubble {
-        x: number;
-        y: number;
+    export class Bubble extends Objects {
+        radius: number;
+        radius2: number;
 
-        dy: number;
+        constructor() {
+            super();
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.dy = Math.random() * -1 - 1;
+            this.radius = 7;
+            this.radius2 = 4;
+}
 
 
         draw(): void {
@@ -12,12 +19,10 @@ namespace task12 {
             crc.fillStyle = "lightblue";
             crc.fill(bubble);
             crc.stroke(bubble);
+            super.draw();
         }
 
-        update(): void {
-            this.move();
-            this.draw();
-        }
+        
 
         move(): void {
             this.y += this.dy;

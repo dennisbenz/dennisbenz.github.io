@@ -1,10 +1,14 @@
 namespace task12 {
-    export class Fish1 {
-        x: number;
-        y: number;
+    export class Fish1 extends Objects {
 
-        dx: number;
-        
+        constructor() {
+            super();
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.dx = Math.random() * 2 + 1;
+            this.dy = Math.random() * 2 - 1;
+        }
+
 
 
         draw(): void {
@@ -35,10 +39,7 @@ namespace task12 {
             crc.fill(augezwei);
             crc.stroke(augezwei);
         }
-        update(): void {
-            this.move();
-            this.draw();
-        }
+        
 
         move(): void {
             this.x += this.dx;

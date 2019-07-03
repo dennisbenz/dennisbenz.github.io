@@ -1,11 +1,8 @@
 namespace task12 {
     document.addEventListener("DOMContentLoaded", init);
     export let crc: CanvasRenderingContext2D;
-    let canvas: HTMLCanvasElement;
-    let fish1Array: Fish1[] = [];
-    let fish2Array: Fish2[] = [];
-    let bubbleArray: Bubble[] = [];
-    let bubble2Array: Bubble2[] = [];
+    export let canvas: HTMLCanvasElement;
+    let objectsArray: Objects[] = [];
     let fps: number = 30;
     let imageData: ImageData;
 
@@ -18,32 +15,24 @@ namespace task12 {
         imageData = crc.getImageData(0, 0, canvas.width, canvas.height);
 
         for (let i: number = 0; i < 10; i++) {
-            let x: number = Math.random() * canvas.width;
-            let y: number = Math.random() * canvas.height;
-            let dx: number = Math.random() * 3 - 7;
-            
+
+
             let fish1: Fish1;
             fish1 = new Fish1();
-            fish1.x = x;
-            fish1.y = y;
-            fish1.dx = dx;
-            
-            fish1Array.push(fish1);
+
+
+            objectsArray.push(fish1);
             fish1.draw();
         }
 
         for (let i: number = 0; i < 9; i++) {
-            let x: number = Math.random() * canvas.width;
-            let y: number = Math.random() * canvas.height;
-            let dx: number = Math.random() * 9 - 0;
+
 
             let fish2: Fish2;
             fish2 = new Fish2();
-            fish2.x = x;
-            fish2.y = y;
-            fish2.dx = dx;
 
-            fish2Array.push(fish2);
+
+            objectsArray.push(fish2);
             fish2.draw();
         }
 
@@ -56,7 +45,7 @@ namespace task12 {
             bubble.x = x;
             bubble.y = y;
             bubble.dy = dy;
-            bubbleArray.push(bubble);
+            objectsArray.push(bubble);
             bubble.draw();
         }
         for (let i: number = 0; i < 12; i++) {
@@ -68,13 +57,22 @@ namespace task12 {
             bubble2.x = x;
             bubble2.y = y;
             bubble2.dy = dy;
-            bubble2Array.push(bubble2);
+            objectsArray.push(bubble2);
             bubble2.draw();
         }
 
         update();
 
     }
+
+    function snack(_event: MouseEvent): void {
+        let xMousePos: number = _event.clientX;
+        let yMousePos: number = _event.clientY;
+        let snackNumber: number = Math.floor(Math.random() * (10 - 1 + 1)) + 1; }
+    
+    
+    
+
 
     function drawBackground(): void {
         let wasser: Path2D = new Path2D();
@@ -204,18 +202,9 @@ namespace task12 {
         crc.clearRect(0, 0, canvas.width, canvas.height);
         crc.putImageData(imageData, 0, 0);
 
-        for (let i: number = 0; i < fish1Array.length; i++) {
-            fish1Array[i].update();
-        }
-        for (let i: number = 0; i < fish2Array.length; i++) {
-            fish2Array[i].update();
-        }
-        for (let i: number = 0; i < bubbleArray.length; i++) {
-            bubbleArray[i].update();
-        }
-        for (let i: number = 0; i < bubble2Array.length; i++) {
-            bubble2Array[i].update();
-        }
+        for (let i: number = 0; i < objectsArray.length; i++) {
+            objectsArray[i].update();
+}
     }
 
 

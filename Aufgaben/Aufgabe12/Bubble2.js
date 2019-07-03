@@ -1,16 +1,20 @@
-var task11;
-(function (task11) {
-    class Bubble2 {
+var task12;
+(function (task12) {
+    class Bubble2 extends task12.Objects {
+        constructor() {
+            super();
+            this.x = Math.random() * task12.canvas.width;
+            this.y = Math.random() * task12.canvas.height;
+            this.dy = Math.random() * -1 - 1;
+            this.radius = 7;
+            this.radius2 = 4;
+        }
         draw() {
             let bubble2 = new Path2D();
             bubble2.arc(this.x, this.y, 12, 0, 2 * Math.PI);
-            task11.crc.fillStyle = "darkblue";
-            task11.crc.fill(bubble2);
-            task11.crc.stroke(bubble2);
-        }
-        update() {
-            this.move();
-            this.draw();
+            task12.crc.fillStyle = "darkblue";
+            task12.crc.fill(bubble2);
+            task12.crc.stroke(bubble2);
         }
         move() {
             this.y += this.dy;
@@ -19,6 +23,6 @@ var task11;
             }
         }
     }
-    task11.Bubble2 = Bubble2;
-})(task11 || (task11 = {}));
+    task12.Bubble2 = Bubble2;
+})(task12 || (task12 = {}));
 //# sourceMappingURL=Bubble2.js.map
