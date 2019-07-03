@@ -37,6 +37,7 @@ namespace task12 {
             crc.fillStyle = "black";
             crc.fill(augezwei);
             crc.stroke(augezwei);
+            super.draw();
         }
         
 

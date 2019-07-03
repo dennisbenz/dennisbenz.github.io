@@ -19,6 +19,7 @@ namespace task12 {
             crc.fillStyle = "darkblue";
             crc.fill(bubble2);
             crc.stroke(bubble2);
+            super.draw();
         }
 
 
